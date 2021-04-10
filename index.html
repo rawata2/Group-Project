@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- REFERENCES
+Homepage - https://www.youtube.com/watch?v=-drcStMYOcM&ab_channel=Divinector
+About us page - https://www.youtube.com/watch?v=EOpt0HLymis&ab_channel=webIQ
+Contact page - https://www.youtube.com/watch?v=Db5jCkrVgAw&ab_channel=TrueCoder
+scroll up button javascript - https://www.youtube.com/watch?v=gphMli74Chk&t=576s&ab_channel=CodingJourney
+Rest of the html+css are made on own.
+ -->
+<head>
+	<meta charset="UTF-8">
+	<title>Noteable Homepage</title>
+	<link href="images/penlogo.png" rel="shortcut icon">
+	<link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/fonts.css" rel="stylesheet">
+</head>
+<body>
+	<button id="back-to-top-btn"><i class="fas fa-angle-double-up"></i></button>
+	<div class="container">
+		<header>
+			<h2><a href="#">Noteable.</a></h2>
+			<nav>
+				<li><a href="#">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</nav>
+		</header>
+	
+		<section class="banner-area">
+			<div class="banner-img"></div>
+			<h1>Let's work together!</h1>
+			<h3>A new way to read & write</h3><a class="banner-btn" href="contact.html">Contact us</a>
+		</section>
+		<section class="about-area" id="about">
+			<ul class="about-content">
+				<li class="about-left"></li>
+				<li class="about-right">
+					<h2>About us</h2>
+					<p>For the purpose of this project, we have come up with the idea to develop an electronic notebook called "Noteable" which will allow the user to read and write and will act as a book or copy. Our vision is to digitalise the use of books and copies and become the leading industry in offering this service. We also hope to reduce global waste by 20% by the end of 2030.</p><a class="about-btn" href="team.html">Meet the team</a>
+				</li>
+			</ul>
+		</section>
+		<section class="services-area" id="services">
+			<h3 class="section-title">Services</h3>
+			<ul class="services-content">
+				<li>
+					<i class="fa fa-signal"></i>
+					<h4>Marketing</h4>
+					<p>this product is aimed towards several markets, the target being the students. We are reaching students from all over the world to listen to their needs.</p><br>
+					<a class="about-btn" href="marketing.html">Learn more</a>
+				</li>
+				<li>
+					<i class="far fa-gem"></i>
+					<h4>Product</h4>
+					<p>Our product includes basic functionalites like downloadable ebooks, features like built-in e-pen and file convertor, and a long battery life. </p><br>
+					<a class="about-btn" href="product.html">Learn more</a>
+				</li>
+				<li>
+					<i class="fas fa-euro-sign"></i>
+					<h4>Pricing</h4>
+					<p>We know how hard it can be to afford the new-generation devices and that is why we have brought to you, an affordable alternative. </p><br>
+					<a class="about-btn" href="pricing.html">Learn more</a>
+				</li>
+			</ul>
+		</section>
+		<section class="contact-area" id="contact">
+			<h3 class="section-title">Contact</h3>
+			<ul class="contact-content">
+				<li>
+					<i class="fa fa-map-marker"></i>
+					<p>Dublin City University, Glasnevin,<br>
+					Dublin 9, Ireland.</p>
+				</li>
+				<li>
+					<i class="fa fa-phone"></i>
+					<p>+353 (12) 3456789<br>
+					+1 234 5689</p><br>
+				</li>
+				<li>
+					<i class="fa fa-envelope"></i>
+					<p>info@Noteable.com<br>
+					mail.noteable@gmail.com</p>
+				</li>
+			</ul><br>
+			<a class="about-btn" href="contact.html">Contact us directly</a>
+		</section>
+		<footer>
+			<p>Copyright 2021 - 2021©</p>
+			<p>All Rights Reserved by Noteable</p><i class="fab fa-instagram"></i><br>
+			<i class="fab fa-facebook"></i><br>
+			<i class="fab fa-twitter"></i>
+		</footer>
+	</div>
+
+<script>
+	   const backToTopButton = document.querySelector("#back-to-top-btn");
+
+	   window.addEventListener("scroll", scrollFunction);
+
+	   function scrollFunction() {
+	    if (window.pageYOffset > 300) { // Show backToTopButton
+	      if(!backToTopButton.classList.contains("btnEntrance")) {
+	        backToTopButton.classList.remove("btnExit");
+	        backToTopButton.classList.add("btnEntrance");
+	        backToTopButton.style.display = "block";
+	      }
+	    }
+	    else { // Hide backToTopButton
+	      if(backToTopButton.classList.contains("btnEntrance")) {
+	        backToTopButton.classList.remove("btnEntrance");
+	        backToTopButton.classList.add("btnExit");
+	        setTimeout(function() {
+	          backToTopButton.style.display = "none";
+	        }, 250);
+	      }
+	    }
+	   }
+
+	   backToTopButton.addEventListener("click", smoothScrollBackToTop);
+
+	   // function backToTop() {
+	   //   window.scrollTo(0, 0);
+	   // }
+
+	   function smoothScrollBackToTop() {
+	    const targetPosition = 0;
+	    const startPosition = window.pageYOffset;
+	    const distance = targetPosition - startPosition;
+	    const duration = 750;
+	    let start = null;
+	    
+	    window.requestAnimationFrame(step);
+
+	    function step(timestamp) {
+	      if (!start) start = timestamp;
+	      const progress = timestamp - start;
+	      window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+	      if (progress < duration) window.requestAnimationFrame(step);
+	    }
+	   }
+
+	   function easeInOutCubic(t, b, c, d) {
+	      t /= d/2;
+	      if (t < 1) return c/2*t*t*t + b;
+	      t -= 2;
+	      return c/2*(t*t*t + 2) + b;
+	   };
+	</script>
+
+</body>
+</html>

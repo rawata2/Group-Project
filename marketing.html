@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/marketing.css">
+    <title>Marketing</title>
+		<link href="images/penlogo.png" rel="shortcut icon" />
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+		<link href="css/fonts.css" rel="stylesheet" />
+     </head>
+	<body>
+
+		<!-- Header starts here -->
+			<header>
+		<h2><a href="index.html">Noteable.</a></h2>
+		<nav>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="index.html#about">About</a></li>
+			<li><a href="index.html#services">Services</a></li>
+			<li><a href="index.html#contact.html">Contact</a></li>
+		</nav>
+	</header>
+	
+	<main>
+	<body class="tm-bg-dark">
+    <main class="tm-container masonry">
+        <div class="item tm-bg-white tm-block tm-block-left" data-desktop-seq-no="1" data-mobile-seq-no="1">
+            <p class="tm-hero-text">Noteable is a digital tablet that lets you keep everything you need for school or work in one place. It allows you to access things such as homework, schedules, notes, pictures etc from one device and also includes features such as a file type converter, a built-in Epen, simultaneous editing and much more.</p>
+            <div class="tm-block-brand">
+                <div class="tm-bg-primary-dark tm-text-white tm-block-brand-inner">
+                   <img src="images/penlogo.png" width="40px", height="50px" alt="Image">
+                    <h1 class="tm-brand-name">NOTEABLE.</h1>
+                </div>
+            </div>
+        </div>
+        <div class="item" data-desktop-seq-no="2" data-mobile-seq-no="4">
+            <img src="images/image-01.jpg" alt="Image" class="tm-img-left">
+        </div>
+        <div class="item tm-bg-secondary tm-text-white tm-block tm-block-wider tm-block-pad tm-block-left-2" data-desktop-seq-no="3"
+            data-mobile-seq-no="5">
+            <i class="fas fa-award fa-4x tm-block-icon"></i>
+            <p>Our target audience ranges from Secondary school students - College/university students and workplaces. This tablet is strictly used for educational purposes and will only be suitable  ages 12 and over.
+			</p>
+            <div class="tm-text-right">
+                
+            </div>
+        </div>
+       
+        <div class="tm-footer" id="tmFooter" data-desktop-seq-no="5" data-mobile-seq-no="9">
+            <img src="images/qr-link-tooplate.png" alt="QR Code" class="tm-img-qr">
+            <div>
+                <p class="tm-mb-small">Copyright 2021 Noteable</p>
+                <p>Designed by Noteable</a></p>
+            </div>
+        </div>
+        <div class="item" data-desktop-seq-no="6" data-mobile-seq-no="2">
+            <img src="images/image-02.jpg" alt="Image">
+        </div>
+        <div class="item tm-block-right" data-desktop-seq-no="7" data-mobile-seq-no="3">
+            <div class="tm-block-right-inner tm-bg-primary-light tm-text-white tm-block tm-block-wider tm-block-pad">
+                    <h4 class="tm-text-uppercase">
+                        Our Promise
+                    </h4>
+               
+                <p class="tm-mt tm-mb-small">With Noteable, comes a charger for it. It is a small square magnetic device that connects to the back of the tablet and has a power switch that you can turn on whenever it’s needed. This way, there is no need for long wires or plugs to charge your device. 
+                </p>
+                
+            </div>
+        </div>
+		
+
+
+        <div class="item tm-bg-white tm-block tm-form-section" data-desktop-seq-no="9" data-mobile-seq-no="7">
+            <div class="tm-form-container tm-block-pad tm-pb-0">
+                <p class="tm-hero-text">Noteable is a digital tablet that lets you keep everything you need for school or work in one place. It allows you to access things such as homework, schedules, notes, pictures etc from one device and also includes features such as a file type converter, a built-in Epen, simultaneous editing and much more.</p>
+            </div>
+                <div class="tm-bg-secondary tm-text-white tm-block-pad tm-form-section-tag-inner">
+                        <h4>Research</h4>
+                    <br>
+                    <p>According to research, The tablet market has witnessed a growth of 13.6% in terms of sales in the year 2020. As of now, There are a total of 164.1 million tablets that were shipped etc</p>
+                </div>
+            </div>
+        
+
+    </main>
+
+ <footer>
+            <p>Copyright 2021 - 2021©</p>
+            <p>All Rights Reserved by Noteable</p>
+            <i class="fab fa-instagram"></i><br/>
+            <i class="fab fa-facebook"></i><br/>
+            <i class="fab fa-twitter"></i>
+ </footer>
+	
+	 <script>
+
+        let callAdjustLayout;
+        let currentLayout = "desktop",
+            nextLayout = "desktop";
+
+     
+        function detectIE() {
+            var ua = window.navigator.userAgent;
+
+            var msie = ua.indexOf('MSIE ');
+            if (msie > 0) {
+          
+                return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+            }
+
+            var trident = ua.indexOf('Trident/');
+            if (trident > 0) {
+             
+                var rv = ua.indexOf('rv:');
+                return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+            }
+
+            var edge = ua.indexOf('Edge/');
+            if (edge > 0) {
+               
+                return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+            }
+
+           
+            return false;
+        }
+
+        function adjustLayout() {
+            let block1, block2, block3, block4, block5, block6, block7, block8, block9;
+
+            if (window.innerWidth <= 1199) {
+                // Mobile layout
+                nextLayout = "mobile";
+                block1 = $("div[data-mobile-seq-no='1']");
+                block2 = $("div[data-mobile-seq-no='2']");
+                block3 = $("div[data-mobile-seq-no='3']");
+                block4 = $("div[data-mobile-seq-no='4']");
+                block5 = $("div[data-mobile-seq-no='5']");
+                block6 = $("div[data-mobile-seq-no='6']");
+                block7 = $("div[data-mobile-seq-no='7']");
+                block8 = $("div[data-mobile-seq-no='8']");
+                block9 = $("div[data-mobile-seq-no='9']");
+            } else {
+                // Desktop layout
+                nextLayout = "desktop";
+                block1 = $("div[data-desktop-seq-no='1']");
+                block2 = $("div[data-desktop-seq-no='2']");
+                block3 = $("div[data-desktop-seq-no='3']");
+                block4 = $("div[data-desktop-seq-no='4']");
+                block5 = $("div[data-desktop-seq-no='5']");
+                block6 = $("div[data-desktop-seq-no='6']");
+                block7 = $("div[data-desktop-seq-no='7']");
+                block8 = $("div[data-desktop-seq-no='8']");
+                block9 = $("div[data-desktop-seq-no='9']");
+            }
+
+            if (nextLayout !== currentLayout) {
+                // Reorder blocks based on their seq no
+                block1.after(block2.detach());
+                block2.after(block3.detach());
+                block3.after(block4.detach());
+                block4.after(block5.detach());
+                block5.after(block6.detach());
+                block6.after(block7.detach());
+                block7.after(block8.detach());
+                block8.after(block9.detach());
+                currentLayout = nextLayout;
+            }
+        }
+
+
+        window.onresize = function () {
+            clearTimeout(callAdjustLayout);
+            callAdjustLayout = setTimeout(adjustLayout, 100);
+        }
+
+        $(function () {
+            if (detectIE()) {
+                alert('Please use the latest version of Chrome or Firefox for best browsing experience.');
+            }
+
+            adjustLayout();
+        })
+
+    </script>
+</body>
+</html>
